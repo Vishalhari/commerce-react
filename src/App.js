@@ -4,6 +4,7 @@ import './App.css';
 import Products from './components/Products/Products';
 import { useState } from 'react';
 import Header from './Pages/Header';
+import Categorieslist from './components/Categories/Categorieslist';
 
 function App() {
   
@@ -41,6 +42,7 @@ function App() {
             </div>
         </div>
     </div>
+    <Categorieslist />
    </div>
   );
 }
