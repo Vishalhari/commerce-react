@@ -6,7 +6,7 @@ const Categorieslist = () => {
     <div className="container-fluid pt-5">
     <div className="row px-xl-5 pb-3">
         <div className="col-lg-4 col-md-6 pb-1">
-            <div class="cat-item d-flex flex-column border mb-4" style={{ padding: "30px" }}>
+            <div className="cat-item d-flex flex-column border mb-4" style={{ padding: "30px" }}>
                 <p className="text-right">15 Products</p>
                 <a href="" className="cat-img position-relative overflow-hidden mb-3">
                     <img className="img-fluid" src="img/cat-1.jpg" alt="" />

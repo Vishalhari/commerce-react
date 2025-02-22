@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
+import axios from '../constants/axios';
+
+import {allcategories} from '../constants/urls';
 
 import Header from '../Pages/Header';
 import Categorieslist from '../components/Categories/Categorieslist';
@@ -8,9 +11,16 @@ import Clients from './Clients';
 import Footer from './Footer';
 
 const Home = () => {
+    const [categories,Setcategories] = useState([]);
+    useEffect(() => {   
+      axios.get(allcategories)
+        .then((response) => {
+            Setcategories(response.data);
+        })
+    },[]);
   return (
     <div>
-    <Header />
+    <Header categories={categories} />
     <div className="container-fluid pt-5">
         <div className="row px-xl-5 pb-3">
             <div className="col-lg-3 col-md-6 col-sm-12 pb-1">

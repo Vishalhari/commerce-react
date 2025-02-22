@@ -2,7 +2,7 @@ import React from 'react'
 import Banner from './Banner'
 import Category from '../components/Categories/Category'
 
-const Header = () => {
+const Header = ({categories}) => {
   return (
     <div>
     <div className="container-fluid">
@@ -39,7 +39,7 @@ const Header = () => {
    <div className="row align-items-center py-3 px-xl-5">
        <div className="col-lg-3 d-none d-lg-block">
            <a href="" className="text-decoration-none">
-               <h1 className="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+               <h1 className="m-0 display-5 font-weight-semi-bold"><span className="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
            </a>
        </div>
        <div className="col-lg-6 col-6 text-left">
@@ -69,11 +69,11 @@ const Header = () => {
 <div className="container-fluid mb-5">
 <div className="row border-top px-xl-5">
     <div className="col-lg-3 d-none d-lg-block">
-    <Category />
+    <Category categories={categories} />
     </div>
     <div className="col-lg-9">
         <nav className="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
-            <a href="" class="text-decoration-none d-block d-lg-none">
+            <a href="" className="text-decoration-none d-block d-lg-none">
                 <h1 className="m-0 display-5 font-weight-semi-bold"><span className="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
             </a>
             <button type="button" className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -84,7 +84,7 @@ const Header = () => {
                     <a href="index.html" className="nav-item nav-link active">Home</a>
                     <a href="shop.html" className="nav-item nav-link">Shop</a>
                     <a href="detail.html" className="nav-item nav-link">Shop Detail</a>
-                    <div class="nav-item dropdown">
+                    <div className="nav-item dropdown">
                         <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
                         <div className="dropdown-menu rounded-0 m-0">
                             <a href="cart.html" className="dropdown-item">Shopping Cart</a>

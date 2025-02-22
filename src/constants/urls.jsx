@@ -1,0 +1,2 @@
+
+export const allcategories = '/categories';
