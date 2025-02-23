@@ -49,7 +49,7 @@ const Home = () => {
             </div>
         </div>
     </div>
-    <Categorieslist />
+    <Categorieslist categories={categories} />
     <Offers />
     <div className="container-fluid pt-5">
     <div className="text-center mb-4">
