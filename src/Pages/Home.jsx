@@ -3,16 +3,20 @@ import axios from '../constants/axios';
 
 import {allcategories,allproducts} from '../constants/urls';
 
-import Header from '../Pages/Header';
+
 import Categorieslist from '../components/Categories/Categorieslist';
 import Offers from '../Pages/Offers';
 import Subscribe from './Subscribe';
 import Clients from './Clients';
 import Footer from './Footer';
+import Header from './parts/Header';
 
 const Home = () => {
     const [categories,Setcategories] = useState([]);
     const [trendyproducts,Settrendyproducts] = useState([]);
+    const[isbanner,Setisbanner] = useState(1);
+    const [isOpen,Setisopen] = useState(1);
+    const [isHome,Setishome] = useState(1);
     useEffect(() => {   
         getCategories();
         gettrendyproducts();
@@ -35,7 +39,7 @@ const Home = () => {
     }
   return (
     <div>
-    <Header categories={categories} />
+    <Header isbanner={isbanner} isHome={isHome} />
     <div className="container-fluid pt-5">
         <div className="row px-xl-5 pb-3">
             <div className="col-lg-3 col-md-6 col-sm-12 pb-1">

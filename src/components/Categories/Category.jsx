@@ -5,13 +5,16 @@ import {Link} from "react-router-dom";
 
 import {allcategories} from '../../constants/urls';
 
-const Category = () => {
+const Category = ({isHome}) => {
     const [isOpen,Setisopen] = useState(1);
     const [categories,Setcategories] = useState([]);
 
 
     useEffect(() => {
       getCategories();
+      if (!isHome) {
+        Setisopen(0);
+      }
     },[])
 
 
