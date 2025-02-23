@@ -1,7 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import axios from '../../constants/axios';
 
-const Category = ({categories}) => {
+import {Link} from "react-router-dom";
+
+import {allcategories} from '../../constants/urls';
+
+const Category = () => {
     const [isOpen,Setisopen] = useState(1);
+    const [categories,Setcategories] = useState([]);
+
+
+    useEffect(() => {
+      getCategories();
+    },[])
+
+
+    const getCategories = () => {
+      axios.get(allcategories)
+      .then((response) => {
+          Setcategories(response.data);
+      })
+  }
+    
 
 
   return (
@@ -26,7 +46,7 @@ const Category = ({categories}) => {
                     
                     {
                         categories.map((item,index) => (
-                          <a href="" key={index}  className="nav-item nav-link">{item.name}</a>
+                          <Link to={`categories/${item.id}`} key={index}  className="nav-item nav-link">{item.name}</Link>
                         ))
                       }
                 </div>
